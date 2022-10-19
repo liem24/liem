@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td {
+            border: 1px solid none;
+            
+        }
+        h3{
+
+            text-align: center;
+        }
+        td {
+            padding: 3px;
+            background-color: #7575CF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form >
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h3>REGISTER FORM</h3>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">Name</td>
+                <td><input id="name" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Welcome" id="welcome" disabled></td>
+            </tr>
+            <tr>
+                <td>Job</td>
+                <td>
+                    <select>
+                        <option value="0">[........]</option>
+                        <option value="1">Manager</option>
+                        <option value="2">Accountant</option>
+                        <option value="3">Saleman</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td><input name="txsalary" disabled></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input name="txadd"></td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="2">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function checkname(){
+            var name=document.getElementById("name").value;
+            document.getElementById("welcome").value=welcome+name;
+        }
+        function checkjob(){
+            var job = document.getElementById("sltjob").value;
+            if (job=="0"){
+                alert("Job must be selected");
+            }else if(job =="1"){
+                document.getElementById("sltjob").value =2000;
+            }else if(job =="2"){
+                document.getElementById("sltjob").value =1000;
+            }else if(job =="3"){
+                document.getElementById("sltjob").value =500;
+            }
+        }
+        function checkSubmit(){
+            var name = document.getElementById("name").value;
+            var job = document.getElementById("sltjob").value;
+            var address = document.getElementById("txtadd").value;
+            var mobile = document.getElementById("txtMob").value;
+            if(!name){
+                alert("Name can not blank");
+            }else if("job ==0"){
+                alert("job can not blank");
+            }else if(!address){
+                alert("address can not blank");
+            }else if(!mobile){
+                alert("mobile can not blank");
+            }else if(!/^([0-9]{10,11})$/.test(mobile)){
+                alert("mobile must be in form");
+            }else{
+                alert("register sucessful");
+            }
+        }
+    </script>
+</body>
+
+</html>
